@@ -128,3 +128,27 @@ int main() {
 	// your code goes here
 	return 0;
 }
+
+	
+	
+	Return Sub-strings from a strings
+	
+#include <iostream>
+using namespace std;
+
+void subseQ(string s, string ans){
+    if(s.size() ==0){
+        std::cout << ans<<endl;
+        return;
+    }
+    char ch = s[0];
+    string ros = s.substr(1);
+    subseQ(ros, ans);
+    subseQ(ros,ans+ch);
+}
+int main() {
+    subseQ("ABCD", "");
+    
+	// your code goes here
+	return 0;
+}
