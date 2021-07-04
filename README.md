@@ -41,3 +41,37 @@ int main() {
     rePlacepi(abc);
 	return 0;
 }
+
+	#Find First and last Occurance of an element in an Array.
+	
+#include <iostream>
+using namespace std;
+int FirstOcuur(int arr[], int n, int i, int key){
+    if(i ==n){
+        return -1;
+    }
+    if(arr[i] == key){
+        return i;
+    }
+    return FirstOcuur(arr, n, i+1, key);
+}
+int lastOccur(int arr[], int n, int i, int key){
+    if(i ==n){
+        return -1;
+    }
+    int restArray = lastOccur(arr, n, i+1, key);
+    if(restArray != -1){
+        return restArray;
+    }
+    if(arr [i] == key){
+        return i;
+    }
+    return -1;
+}
+int main() {
+    int arr[] = {1,2,3,4,5,6,5,8};
+    std::cout << FirstOcuur(arr, 8, 0, 5) << std::endl;
+    std::cout << lastOccur(arr, 8, 0, 5) << std::endl;
+	// your code goes here
+	return 0;
+}
