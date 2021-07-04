@@ -103,3 +103,28 @@ int main() {
 	// your code goes here
 	return 0;
 }
+
+	Move all x in ths string to last
+	
+	
+#include <iostream>
+using namespace std;
+
+string moveAllx(string s){
+    if(s.size() ==0){
+        return "";
+    }
+    char ch = s[0];
+    string ans = moveAllx(s.substr(1));
+    if(ch == 'x'){
+        return ans+ch;
+    }
+    else{
+        return ch+ans;
+    }
+}
+int main() {
+    std::cout << moveAllx("xjjhakhxxkhakxxxkhah") << std::endl;
+	// your code goes here
+	return 0;
+}
