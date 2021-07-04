@@ -176,3 +176,27 @@ int main() {
     Substring("AB", "");
 	return 0;
 }
+
+	
+	Print all possible mutations from the string
+	
+	#include <iostream>
+using namespace std;
+
+void perMutation(string s, string ans){
+    if(s.size() == 0){
+        std::cout << ans << std::endl;
+        return;
+    }
+    for(int i =0; i<s.size(); i++){
+        char ch = s[i];
+        string ros = s.substr(0, i) + s.substr(i+1);
+        
+        perMutation(ros, ans+ch);
+    }
+}
+int main() {
+    perMutation("ABDC", "");
+	// your code goes here
+	return 0;
+}
