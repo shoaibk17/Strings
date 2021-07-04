@@ -152,3 +152,27 @@ int main() {
 	// your code goes here
 	return 0;
 }
+
+	
+	Return subsrings with a ASCII value.
+	
+#include <iostream>
+using namespace std;
+
+void Substring(string s, string ans){
+    if(s.size() == 0){
+        std::cout << ans << std::endl;
+        return;
+    }
+    char ch = s[0];
+    int code = ch;
+    string ros = s.substr(1);
+    
+    Substring(ros, ans);
+    Substring(ros, ans+ch);
+    Substring(ros, ans+to_string(code));
+}
+int main() {
+    Substring("AB", "");
+	return 0;
+}
